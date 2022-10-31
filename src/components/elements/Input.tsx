@@ -31,6 +31,7 @@ const propTypes = {
   placeholder: PropTypes.string,
   rows: PropTypes.number,
   hint: PropTypes.string,
+  id: PropTypes.string,
 };
 
 const defaultProps = {
@@ -48,6 +49,7 @@ const defaultProps = {
   placeholder: "",
   rows: 3,
   hint: null,
+  id: null,
 };
 
 const Input = ({
@@ -66,8 +68,9 @@ const Input = ({
   placeholder,
   rows,
   hint,
+  id,
   ...props
-}) => {
+}: any) => {
   const wrapperClasses = classNames(
     formGroup &&
       formGroup !== "" &&
@@ -86,7 +89,7 @@ const Input = ({
   return (
     <>
       {label && (
-        <FormLabel labelHidden={labelHidden} id={props.id}>
+        <FormLabel labelHidden={labelHidden} id={id}>
           {label}
         </FormLabel>
       )}

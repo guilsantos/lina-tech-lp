@@ -1,16 +1,16 @@
 import React, { useState, useRef, useEffect } from "react";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import classNames from "classnames";
 import { Link } from "react-router-dom";
 import Logo from "./partials/Logo";
 
-const propTypes = {
-  navPosition: PropTypes.string,
-  hideNav: PropTypes.bool,
-  hideSignin: PropTypes.bool,
-  bottomOuterDivider: PropTypes.bool,
-  bottomDivider: PropTypes.bool,
-};
+// const propTypes = {
+//   navPosition: PropTypes.string,
+//   hideNav: PropTypes.bool,
+//   hideSignin: PropTypes.bool,
+//   bottomOuterDivider: PropTypes.bool,
+//   bottomDivider: PropTypes.bool,
+// };
 
 const defaultProps = {
   navPosition: "",
@@ -28,7 +28,7 @@ const Header = ({
   bottomOuterDivider,
   bottomDivider,
   ...props
-}) => {
+}: any) => {
   const [isActive, setIsactive] = useState(false);
 
   const nav = useRef(null);
@@ -47,25 +47,26 @@ const Header = ({
 
   const openMenu = () => {
     document.body.classList.add("off-nav-is-active");
-    nav.current.style.maxHeight = nav.current.scrollHeight + "px";
+    (nav as any).current.style.maxHeight =
+      (nav as any).current.scrollHeight + "px";
     setIsactive(true);
   };
 
   const closeMenu = () => {
     document.body.classList.remove("off-nav-is-active");
-    nav.current && (nav.current.style.maxHeight = null);
+    nav.current && ((nav as any).current.style.maxHeight = null);
     setIsactive(false);
   };
 
-  const keyPress = (e) => {
+  const keyPress = (e: any) => {
     isActive && e.keyCode === 27 && closeMenu();
   };
 
-  const clickOutside = (e) => {
+  const clickOutside = (e: any) => {
     if (!nav.current) return;
     if (
       !isActive ||
-      nav.current.contains(e.target) ||
+      (nav as any).current.contains(e.target) ||
       e.target === hamburger.current
     )
       return;
@@ -140,7 +141,7 @@ const Header = ({
   );
 };
 
-Header.propTypes = propTypes;
+// Header.propTypes = propTypes;
 Header.defaultProps = defaultProps;
 
 export default Header;

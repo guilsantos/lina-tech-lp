@@ -2,7 +2,7 @@ import React, { useState, useEffect, useImperativeHandle } from "react";
 import PropTypes from "prop-types";
 import { throttle } from "lodash";
 
-const ScrollReveal = React.forwardRef((props, ref) => {
+const ScrollReveal = React.forwardRef((props: any, ref) => {
   const [viewportHeight, setViewportheight] = useState(window.innerHeight);
   const [revealEl, setRevealel] = useState([]);
 
@@ -13,14 +13,14 @@ const ScrollReveal = React.forwardRef((props, ref) => {
     );
   };
 
-  const elementIsVisible = (el, offset) => {
+  const elementIsVisible = (el: any, offset: any) => {
     return el.getBoundingClientRect().top <= viewportHeight - offset;
   };
 
   const revealElements = () => {
     if (checkComplete()) return;
     for (let i = 0; i < revealEl.length; i++) {
-      let el = revealEl[i];
+      let el: any = revealEl[i];
       let revealDelay = el.getAttribute("data-reveal-delay");
       let revealOffset = el.getAttribute("data-reveal-offset")
         ? el.getAttribute("data-reveal-offset")
@@ -45,7 +45,7 @@ const ScrollReveal = React.forwardRef((props, ref) => {
 
   useImperativeHandle(ref, () => ({
     init() {
-      setRevealel(document.querySelectorAll("[class*=reveal-]"));
+      setRevealel((document as any).querySelectorAll("[class*=reveal-]"));
     },
   }));
 

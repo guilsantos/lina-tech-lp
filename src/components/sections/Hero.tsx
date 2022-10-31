@@ -7,9 +7,9 @@ import Image from "../elements/Image";
 import Modal from "../elements/Modal";
 import VideoPlaceholder from "./../../assets/images/video-placeholder.jpg";
 
-const propTypes = {
-  ...SectionProps.types,
-};
+// const propTypes = {
+//   ...SectionProps.types,
+// };
 
 const defaultProps = {
   ...SectionProps.defaults,
@@ -24,15 +24,15 @@ const Hero = ({
   hasBgColor,
   invertColor,
   ...props
-}) => {
+}: any) => {
   const [videoModalActive, setVideomodalactive] = useState(false);
 
-  const openModal = (e) => {
+  const openModal = (e: any) => {
     e.preventDefault();
     setVideomodalactive(true);
   };
 
-  const closeModal = (e) => {
+  const closeModal = (e: any) => {
     e.preventDefault();
     setVideomodalactive(false);
   };
@@ -128,7 +128,7 @@ const Hero = ({
   );
 };
 
-Hero.propTypes = propTypes;
+// Hero.propTypes = propTypes;
 Hero.defaultProps = defaultProps;
 
 export default Hero;

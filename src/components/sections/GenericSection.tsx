@@ -23,7 +23,7 @@ const GenericSection = ({
   hasBgColor,
   invertColor,
   ...props
-}) => {
+}: any) => {
   const outerClasses = classNames(
     "section",
     topOuterDivider && "has-top-divider",

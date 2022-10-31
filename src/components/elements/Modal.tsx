@@ -1,15 +1,15 @@
 import React, { useEffect } from "react";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import classNames from "classnames";
 
-const propTypes = {
-  children: PropTypes.node,
-  handleClose: PropTypes.func.isRequired,
-  show: PropTypes.bool.isRequired,
-  closeHidden: PropTypes.bool,
-  video: PropTypes.string,
-  videoTag: PropTypes.oneOf(["iframe", "video"]),
-};
+// const propTypes = {
+//   children: PropTypes.node,
+//   handleClose: PropTypes.func.isRequired,
+//   show: PropTypes.bool.isRequired,
+//   closeHidden: PropTypes.bool,
+//   video: PropTypes.string,
+//   videoTag: PropTypes.oneOf(["iframe", "video"]),
+// };
 
 const defaultProps = {
   children: null,
@@ -28,7 +28,7 @@ const Modal = ({
   video,
   videoTag,
   ...props
-}) => {
+}: any) => {
   useEffect(() => {
     document.addEventListener("keydown", keyPress);
     document.addEventListener("click", stopProgagation);
@@ -50,11 +50,11 @@ const Modal = ({
     }
   };
 
-  const keyPress = (e) => {
+  const keyPress = (e: any) => {
     e.keyCode === 27 && handleClose(e);
   };
 
-  const stopProgagation = (e) => {
+  const stopProgagation = (e: any) => {
     e.stopPropagation();
   };
 
@@ -102,7 +102,7 @@ const Modal = ({
   );
 };
 
-Modal.propTypes = propTypes;
+// Modal.propTypes = propTypes;
 Modal.defaultProps = defaultProps;
 
 export default Modal;

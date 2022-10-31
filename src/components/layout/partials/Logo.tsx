@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Image from "../../elements/Image";
 import IconLogo from "./../../../assets/images/logo.svg";
 
-const Logo = ({ className, ...props }) => {
+const Logo = ({ className, ...props }: any) => {
   const classes = classNames("brand", className);
 
   return (

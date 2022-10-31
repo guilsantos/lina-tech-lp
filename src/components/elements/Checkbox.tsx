@@ -6,7 +6,6 @@ const propTypes = {
   children: PropTypes.node,
   name: PropTypes.string,
   value: PropTypes.string,
-  rightLabel: PropTypes.string,
   disabled: PropTypes.bool,
   checked: PropTypes.bool,
 };
@@ -15,22 +14,20 @@ const defaultProps = {
   children: null,
   name: undefined,
   value: undefined,
-  rightLabel: undefined,
   disabled: false,
   checked: undefined,
 };
 
-const Switch = ({
+const Checkbox = ({
   className,
   children,
   name,
   value,
-  rightLabel,
   disabled,
   checked,
   ...props
-}) => {
-  const classes = classNames("form-switch", className);
+}: any) => {
+  const classes = classNames("form-checkbox", className);
 
   return (
     <label className={classes}>
@@ -42,14 +39,12 @@ const Switch = ({
         disabled={disabled}
         checked={checked}
       />
-      <span className="form-switch-icon"></span>
-      <span>{children}</span>
-      {rightLabel && <span>{rightLabel}</span>}
+      {children}
     </label>
   );
 };
 
-Switch.propTypes = propTypes;
-Switch.defaultProps = defaultProps;
+Checkbox.propTypes = propTypes;
+Checkbox.defaultProps = defaultProps;
 
-export default Switch;
+export default Checkbox;

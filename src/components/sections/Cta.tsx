@@ -24,7 +24,7 @@ const Cta = ({
   invertColor,
   split,
   ...props
-}) => {
+}: any) => {
   const outerClasses = classNames(
     "cta section center-content-mobile reveal-from-bottom",
     topOuterDivider && "has-top-divider",

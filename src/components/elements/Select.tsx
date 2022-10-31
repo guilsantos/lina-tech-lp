@@ -43,7 +43,7 @@ const Select = ({
   placeholder,
   hint,
   ...props
-}) => {
+}: any) => {
   const classes = classNames(
     "form-select",
     size && `form-select-${size}`,

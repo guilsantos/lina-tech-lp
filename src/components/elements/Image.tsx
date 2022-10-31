@@ -1,12 +1,12 @@
 import React, { useState, useRef, useEffect } from "react";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 
-const propTypes = {
-  src: PropTypes.oneOfType([PropTypes.object, PropTypes.string]).isRequired,
-  width: PropTypes.number,
-  height: PropTypes.number,
-  alt: PropTypes.string,
-};
+// const propTypes = {
+//   src: PropTypes.oneOfType([PropTypes.object, PropTypes.string]).isRequired,
+//   width: PropTypes.number,
+//   height: PropTypes.number,
+//   alt: PropTypes.string,
+// };
 
 const defaultProps = {
   src: undefined,
@@ -15,7 +15,7 @@ const defaultProps = {
   alt: undefined,
 };
 
-const Image = ({ className, src, width, height, alt, ...props }) => {
+const Image = ({ className, src, width, height, alt, ...props }: any) => {
   const [loaded, setLoaded] = useState(false);
 
   const image = useRef(null);
@@ -25,11 +25,11 @@ const Image = ({ className, src, width, height, alt, ...props }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const placeholderSrc = (w, h) => {
+  const placeholderSrc = (w: any, h: any) => {
     return `data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${h}"%3E%3C/svg%3E`;
   };
 
-  const handlePlaceholder = (img) => {
+  const handlePlaceholder = (img: any) => {
     const placeholder = document.createElement("img");
     if (!loaded) {
       img.style.display = "none";
@@ -65,7 +65,7 @@ const Image = ({ className, src, width, height, alt, ...props }) => {
   );
 };
 
-Image.propTypes = propTypes;
+// Image.propTypes = propTypes;
 Image.defaultProps = defaultProps;
 
 export default Image;

@@ -4,8 +4,9 @@ import classNames from "classnames";
 
 const propTypes = {
   children: PropTypes.node,
-  name: PropTypes.string.isRequired,
+  name: PropTypes.string,
   value: PropTypes.string,
+  rightLabel: PropTypes.string,
   disabled: PropTypes.bool,
   checked: PropTypes.bool,
 };
@@ -13,38 +14,42 @@ const propTypes = {
 const defaultProps = {
   children: null,
   name: undefined,
-  value: "",
+  value: undefined,
+  rightLabel: undefined,
   disabled: false,
-  checked: false,
+  checked: undefined,
 };
 
-const Radio = ({
+const Switch = ({
   className,
   children,
   name,
   value,
+  rightLabel,
   disabled,
   checked,
   ...props
-}) => {
-  const classes = classNames("form-radio", className);
+}: any) => {
+  const classes = classNames("form-switch", className);
 
   return (
     <label className={classes}>
       <input
         {...props}
-        type="radio"
+        type="checkbox"
         name={name}
         value={value}
         disabled={disabled}
         checked={checked}
       />
-      {children}
+      <span className="form-switch-icon"></span>
+      <span>{children}</span>
+      {rightLabel && <span>{rightLabel}</span>}
     </label>
   );
 };
 
-Radio.propTypes = propTypes;
-Radio.defaultProps = defaultProps;
+Switch.propTypes = propTypes;
+Switch.defaultProps = defaultProps;
 
-export default Radio;
+export default Switch;

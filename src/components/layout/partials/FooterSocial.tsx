@@ -1,7 +1,7 @@
 import React from "react";
 import classNames from "classnames";
 
-const FooterSocial = ({ className, ...props }) => {
+const FooterSocial = ({ className, ...props }: any) => {
   const classes = classNames("footer-social", className);
 
   return (

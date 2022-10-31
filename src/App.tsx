@@ -11,15 +11,15 @@ import LayoutDefault from "./layouts/LayoutDefault";
 import Home from "./views/Home";
 
 // Initialize Google Analytics
-ReactGA.initialize(process.env.REACT_APP_GA_CODE);
+ReactGA.initialize((process as any).env.REACT_APP_GA_CODE);
 
-const trackPage = (page) => {
+const trackPage = (page: any) => {
   ReactGA.set({ page });
   ReactGA.pageview(page);
 };
 
 const App = () => {
-  const childRef = useRef();
+  const childRef: any = useRef();
   let location = useLocation();
 
   useEffect(() => {

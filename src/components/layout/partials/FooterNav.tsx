@@ -2,7 +2,7 @@ import React from "react";
 import classNames from "classnames";
 import { Link } from "react-router-dom";
 
-const FooterNav = ({ className, ...props }) => {
+const FooterNav = ({ className, ...props }: any) => {
   const classes = classNames("footer-nav", className);
 
   return (

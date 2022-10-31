@@ -27,7 +27,7 @@ const FeaturesTiles = ({
   invertColor,
   pushLeft,
   ...props
-}) => {
+}: any) => {
   const outerClasses = classNames(
     "features-tiles section",
     topOuterDivider && "has-top-divider",

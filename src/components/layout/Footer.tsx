@@ -15,7 +15,7 @@ const defaultProps = {
   topDivider: false,
 };
 
-const Footer = ({ className, topOuterDivider, topDivider, ...props }) => {
+const Footer = ({ className, topOuterDivider, topDivider, ...props }: any) => {
   const classes = classNames(
     "site-footer center-content-mobile",
     topOuterDivider && "has-top-divider",

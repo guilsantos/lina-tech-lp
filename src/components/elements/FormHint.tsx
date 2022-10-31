@@ -12,7 +12,7 @@ const defaultProps = {
   status: false,
 };
 
-const FormHint = ({ children, className, status, ...props }) => {
+const FormHint = ({ children, className, status, ...props }: any) => {
   const classes = classNames(
     "form-hint",
     status && `text-color-${status}`,

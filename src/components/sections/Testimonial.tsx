@@ -21,7 +21,7 @@ const Testimonial = ({
   invertColor,
   pushLeft,
   ...props
-}) => {
+}: any) => {
   const outerClasses = classNames(
     "testimonial section",
     topOuterDivider && "has-top-divider",

@@ -14,7 +14,7 @@ const defaultProps = {
   id: null,
 };
 
-const FormLabel = ({ className, children, labelHidden, id, ...props }) => {
+const FormLabel = ({ className, children, labelHidden, id, ...props }: any) => {
   const classes = classNames(
     "form-label",
     labelHidden && "screen-reader",

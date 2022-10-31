@@ -16,17 +16,17 @@ const SmoothScroll = ({
   duration,
   onLinkClick,
   ...props
-}) => {
-  const easeInOutQuad = (t) => {
+}: any) => {
+  const easeInOutQuad = (t: any) => {
     return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
   };
 
   const scrollToEl = (
-    startTime,
-    currentTime,
-    duration,
-    scrollEndElemTop,
-    startScrollOffset
+    startTime: any,
+    currentTime: any,
+    duration: any,
+    scrollEndElemTop: any,
+    startScrollOffset: any
   ) => {
     const runtime = currentTime - startTime;
     let progress = runtime / duration;
@@ -50,7 +50,7 @@ const SmoothScroll = ({
     }
   };
 
-  const smoothScroll = (e) => {
+  const smoothScroll = (e: any) => {
     e.preventDefault();
 
     const targetId = to;

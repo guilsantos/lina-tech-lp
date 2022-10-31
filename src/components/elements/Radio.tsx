@@ -4,7 +4,7 @@ import classNames from "classnames";
 
 const propTypes = {
   children: PropTypes.node,
-  name: PropTypes.string,
+  name: PropTypes.string.isRequired,
   value: PropTypes.string,
   disabled: PropTypes.bool,
   checked: PropTypes.bool,
@@ -13,12 +13,12 @@ const propTypes = {
 const defaultProps = {
   children: null,
   name: undefined,
-  value: undefined,
+  value: "",
   disabled: false,
-  checked: undefined,
+  checked: false,
 };
 
-const Checkbox = ({
+const Radio = ({
   className,
   children,
   name,
@@ -26,14 +26,14 @@ const Checkbox = ({
   disabled,
   checked,
   ...props
-}) => {
-  const classes = classNames("form-checkbox", className);
+}: any) => {
+  const classes = classNames("form-radio", className);
 
   return (
     <label className={classes}>
       <input
         {...props}
-        type="checkbox"
+        type="radio"
         name={name}
         value={value}
         disabled={disabled}
@@ -44,7 +44,7 @@ const Checkbox = ({
   );
 };
 
-Checkbox.propTypes = propTypes;
-Checkbox.defaultProps = defaultProps;
+Radio.propTypes = propTypes;
+Radio.defaultProps = defaultProps;
 
-export default Checkbox;
+export default Radio;

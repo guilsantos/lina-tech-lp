@@ -7,9 +7,9 @@ import FeatureSplit1 from "./../../assets/images/features-split-image-01.png";
 import FeatureSplit2 from "./../../assets/images/features-split-image-02.png";
 import FeatureSplit3 from "./../../assets/images/features-split-image-03.png";
 
-const propTypes = {
-  ...SectionSplitProps.types,
-};
+// const propTypes = {
+//   ...SectionSplitProps.types,
+// };
 
 const defaultProps = {
   ...SectionSplitProps.defaults,
@@ -28,7 +28,7 @@ const FeaturesSplit = ({
   alignTop,
   imageFill,
   ...props
-}) => {
+}: any) => {
   const outerClasses = classNames(
     "features-split section",
     topOuterDivider && "has-top-divider",
@@ -165,7 +165,7 @@ const FeaturesSplit = ({
   );
 };
 
-FeaturesSplit.propTypes = propTypes;
+// FeaturesSplit.propTypes = propTypes;
 FeaturesSplit.defaultProps = defaultProps;
 
 export default FeaturesSplit;
