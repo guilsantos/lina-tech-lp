@@ -1,15 +1,13 @@
 import React, { useState } from "react";
 import classNames from "classnames";
 import { SectionProps } from "../../utils/SectionProps";
-import ButtonGroup from "../elements/ButtonGroup";
-import Button from "../elements/Button";
-import Image from "../elements/Image";
-import Modal from "../elements/Modal";
-import VideoPlaceholder from "./../../assets/images/video-placeholder.jpg";
-
-// const propTypes = {
-//   ...SectionProps.types,
-// };
+// HIDE Action buttons
+// import ButtonGroup from "../elements/ButtonGroup";
+// import Button from "../elements/Button";
+// HIDE Video modal
+// import Image from "../elements/Image";
+// import Modal from "../elements/Modal";
+// import VideoPlaceholder from "./../../assets/images/video-placeholder.jpg";
 
 const defaultProps = {
   ...SectionProps.defaults,
@@ -25,17 +23,18 @@ const Hero = ({
   invertColor,
   ...props
 }: any) => {
-  const [videoModalActive, setVideomodalactive] = useState(false);
+  // HIDE Video modal
+  // const [videoModalActive, setVideomodalactive] = useState(false);
 
-  const openModal = (e: any) => {
-    e.preventDefault();
-    setVideomodalactive(true);
-  };
+  // const openModal = (e: any) => {
+  //   e.preventDefault();
+  //   setVideomodalactive(true);
+  // };
 
-  const closeModal = (e: any) => {
-    e.preventDefault();
-    setVideomodalactive(false);
-  };
+  // const closeModal = (e: any) => {
+  //   e.preventDefault();
+  //   setVideomodalactive(false);
+  // };
 
   const outerClasses = classNames(
     "hero section center-content",
@@ -61,19 +60,19 @@ const Hero = ({
               className="mt-0 mb-16 reveal-from-bottom"
               data-reveal-delay="200"
             >
-              {/* Landing template for <span className="text-color-primary">startups</span> */}
-              <span className="text-color-primary">Lina Tech</span> developing
-              the future
+              <span className="text-color-primary">Lina Tech</span>{" "}
+              desenvolvendo o futuro
             </h1>
             <div className="container-xs">
               <p
                 className="m-0 mb-32 reveal-from-bottom"
                 data-reveal-delay="400"
               >
-                Our landing page template works on all devices, so you only have
-                to set it up once, and get beautiful results forever.
+                Somos uma consultoria especializada no desenvolvimento de
+                soluções web.
               </p>
-              <div className="reveal-from-bottom" data-reveal-delay="600">
+              {/* HIDE Action buttons */}
+              {/* <div className="reveal-from-bottom" data-reveal-delay="600">
                 <ButtonGroup>
                   <Button
                     tag="a"
@@ -92,10 +91,11 @@ const Hero = ({
                     View on Github
                   </Button>
                 </ButtonGroup>
-              </div>
+              </div> */}
             </div>
           </div>
-          <div
+          {/* HIDE Video modal */}
+          {/* <div
             className="hero-figure reveal-from-bottom illustration-element-01"
             data-reveal-value="20px"
             data-reveal-delay="800"
@@ -121,7 +121,7 @@ const Hero = ({
             handleClose={closeModal}
             video="https://player.vimeo.com/video/174002812"
             videoTag="iframe"
-          />
+          /> */}
         </div>
       </div>
     </section>

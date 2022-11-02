@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 // import PropTypes from "prop-types";
 import classNames from "classnames";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import Logo from "./partials/Logo";
 
 // const propTypes = {
@@ -106,7 +106,7 @@ const Header = ({
                 className={classNames("header-nav", isActive && "is-active")}
               >
                 <div className="header-nav-inner">
-                  <ul
+                  {/* <ul
                     className={classNames(
                       "list-reset text-xs",
                       navPosition && `header-nav-${navPosition}`
@@ -117,8 +117,8 @@ const Header = ({
                         Documentation
                       </Link>
                     </li>
-                  </ul>
-                  {!hideSignin && (
+                  </ul> */}
+                  {/* {!hideSignin && (
                     <ul className="list-reset header-nav-right">
                       <li>
                         <Link
@@ -130,7 +130,7 @@ const Header = ({
                         </Link>
                       </li>
                     </ul>
-                  )}
+                  )} */}
                 </div>
               </nav>
             </>
